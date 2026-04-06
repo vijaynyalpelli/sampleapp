@@ -1,0 +1,9 @@
+C:\Users\Vijay\sre_demo\MySampleApp\publish\MySampleApp.exe
+C:\Users\Vijay\sre_demo\MySampleApp\publish\appsettings.Development.json
+C:\Users\Vijay\sre_demo\MySampleApp\publish\appsettings.json
+C:\Users\Vijay\sre_demo\MySampleApp\publish\MySampleApp.dll
+C:\Users\Vijay\sre_demo\MySampleApp\publish\MySampleApp.deps.json
+C:\Users\Vijay\sre_demo\MySampleApp\publish\MySampleApp.runtimeconfig.json
+C:\Users\Vijay\sre_demo\MySampleApp\publish\MySampleApp.pdb
+C:\Users\Vijay\sre_demo\MySampleApp\publish\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Vijay\sre_demo\MySampleApp\publish\Microsoft.OpenApi.dll
