@@ -31,3 +31,13 @@ C:\Users\Vijay\sre_demo\MySampleApp\obj\Debug\net10.0\refint\MySampleApp.dll
 C:\Users\Vijay\sre_demo\MySampleApp\obj\Debug\net10.0\MySampleApp.pdb
 C:\Users\Vijay\sre_demo\MySampleApp\obj\Debug\net10.0\MySampleApp.genruntimeconfig.cache
 C:\Users\Vijay\sre_demo\MySampleApp\obj\Debug\net10.0\ref\MySampleApp.dll
+C:\Users\Vijay\sre_demo\MySampleApp\bin\Debug\net10.0\publish\web.config
+C:\Users\Vijay\sre_demo\MySampleApp\bin\Debug\net10.0\publish\appsettings.Development.json
+C:\Users\Vijay\sre_demo\MySampleApp\bin\Debug\net10.0\publish\appsettings.json
+C:\Users\Vijay\sre_demo\MySampleApp\bin\Debug\net10.0\publish\MySampleApp.deps.json
+C:\Users\Vijay\sre_demo\MySampleApp\bin\Debug\net10.0\publish\MySampleApp.runtimeconfig.json
+C:\Users\Vijay\sre_demo\MySampleApp\bin\Debug\net10.0\publish\MySampleApp.staticwebassets.endpoints.json
+C:\Users\Vijay\sre_demo\MySampleApp\obj\Debug\net10.0\MySampleApp.sourcelink.json
+C:\Users\Vijay\sre_demo\MySampleApp\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Vijay\sre_demo\MySampleApp\bin\Debug\net10.0\tests\MySampleApp.Tests\obj\MySampleApp.Tests.csproj.nuget.dgspec.json
+C:\Users\Vijay\sre_demo\MySampleApp\bin\Debug\net10.0\tests\MySampleApp.Tests\obj\project.assets.json

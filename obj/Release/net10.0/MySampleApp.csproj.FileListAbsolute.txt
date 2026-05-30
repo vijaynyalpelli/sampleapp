@@ -31,3 +31,4 @@ C:\Users\Vijay\sre_demo\MySampleApp\obj\Release\net10.0\refint\MySampleApp.dll
 C:\Users\Vijay\sre_demo\MySampleApp\obj\Release\net10.0\MySampleApp.pdb
 C:\Users\Vijay\sre_demo\MySampleApp\obj\Release\net10.0\MySampleApp.genruntimeconfig.cache
 C:\Users\Vijay\sre_demo\MySampleApp\obj\Release\net10.0\ref\MySampleApp.dll
+C:\Users\Vijay\sre_demo\MySampleApp\obj\Release\net10.0\MySampleApp.sourcelink.json

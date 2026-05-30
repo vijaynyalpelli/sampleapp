@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "6L9YCq4K7Jlx+x3Cgbgr6el3RqX42QWRLSD2qAybiXA87SqKgLZkdjSaRdQ4eFKZNENDw61pUb6YaWZ9ixPFLQ==",
+  "dgSpecHash": "KslO/t1Y5wg=",
   "success": true,
   "projectFilePath": "C:\\Users\\Vijay\\sre_demo\\MySampleApp\\MySampleApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Vijay\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.1\\microsoft.aspnetcore.openapi.10.0.1.nupkg.sha512",
+    "C:\\Users\\Vijay\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\Vijay\\.nuget\\packages\\system.text.json\\8.0.5\\system.text.json.8.0.5.nupkg.sha512"
+  ],
   "logs": []
 }
