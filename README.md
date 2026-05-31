@@ -37,28 +37,152 @@ MySampleApp/
 
 ### Build & Run Locally
 
+#### 1. Restore & Build
+
 ```bash
+# Navigate to project directory
+cd C:\Users\Vijay\sre_demo\MySampleApp
+
 # Restore dependencies
 dotnet restore
 
 # Build the project
 dotnet build
-
-# Run the application
-dotnet run
-
-# Run tests
-dotnet test tests/MySampleApp.Tests
 ```
 
-The application will start on `https://localhost:5001` (or http://localhost:5000 in development).
+#### 2. Run the Application
+
+```bash
+# Run in development mode (default)
+dotnet run
+
+# Or run in production mode
+$env:ASPNETCORE_ENVIRONMENT = "Production"
+dotnet run
+```
+
+**Expected Output:**
+```
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: https://localhost:5001
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+```
+
+The application will be available at:
+- **Development**: `http://localhost:5000` (HTTP)
+- **Production**: `https://localhost:5001` (HTTPS)
+
+#### 3. Access the API Endpoints
+
+**Option A: Browser (Easiest)**
+
+Open these URLs directly in your browser:
+
+| Endpoint | URL | Response |
+|----------|-----|----------|
+| Root Health | `http://localhost:5000/` | `"App is running successfully!"` |
+| Liveness Probe | `http://localhost:5000/health` | `{"status":"healthy"}` |
+| Weather Forecast | `http://localhost:5000/weatherforecast` | JSON array of 5 forecasts |
+
+**Option B: PowerShell / Terminal (curl)**
+
+```powershell
+# Root health check
+curl http://localhost:5000/
+
+# Liveness probe
+curl http://localhost:5000/health
+
+# Weather forecast (all 5 days)
+curl http://localhost:5000/weatherforecast
+
+# Pretty-print forecast as JSON
+(Invoke-WebRequest -Uri http://localhost:5000/weatherforecast).Content | ConvertFrom-Json | ConvertTo-Json
+```
+
+**Option C: VS Code REST Client**
+
+Open the `MySampleApp.http` file in VS Code and click **"Send Request"** on any endpoint:
+
+```http
+### Health Check
+GET http://localhost:5000/
+
+### Liveness Probe
+GET http://localhost:5000/health
+
+### Weather Forecast
+GET http://localhost:5000/weatherforecast
+```
+
+**Option D: Postman or Insomnia**
+
+1. Create a new GET request
+2. Paste URL: `http://localhost:5000/weatherforecast`
+3. Click Send
+
+#### 4. Stop the Application
+
+Press `Ctrl+C` in the terminal to stop the running application.
+
+### Sample API Responses
+
+**GET `/weatherforecast`** returns:
+```json
+[
+  {
+    "date": "2024-12-20",
+    "temperatureC": 12,
+    "summary": "Mild",
+    "temperatureF": 54
+  },
+  {
+    "date": "2024-12-21",
+    "temperatureC": -5,
+    "summary": "Freezing",
+    "temperatureF": 23
+  },
+  ...
+]
+```
+
+**GET `/health`** returns:
+```json
+{
+  "status": "healthy"
+}
+```
+
+### Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| **Port 5000 already in use** | Kill the process using `netstat -ano \| findstr :5000` or set custom port: `dotnet run --urls="http://localhost:5555"` |
+| **"Connection refused"** | Ensure app is running with `dotnet run` and wait 2-3 seconds for startup |
+| **HTTPS certificate error** | Use `http://` (not `https://`) in development; use `http://localhost:5000` |
+| **"dotnet" not recognized** | Install .NET 10 SDK from [https://dotnet.microsoft.com/download](https://dotnet.microsoft.com/download) |
+
+### Run Tests
+
+```bash
+# Run all unit & integration tests
+dotnet test tests/MySampleApp.Tests
+
+# Run with verbose output
+dotnet test tests/MySampleApp.Tests -v detailed
+
+# Run specific test file
+dotnet test tests/MySampleApp.Tests/WeatherForecastTests.cs
+```
 
 ### Endpoints
 
-- **GET `/`** — Health check
+- **GET `/`** — Health check (returns `"App is running successfully!"`)
 - **GET `/health`** — Liveness probe (returns `{ "status": "healthy" }`)
-- **GET `/weatherforecast`** — Returns a 5-day forecast
-- **GET `/openapi/v1.json`** — OpenAPI schema (development only)
+- **GET `/weatherforecast`** — 5-day forecast with random temperatures
+- **GET `/openapi/v1.json`** — OpenAPI/Swagger schema (development only)
 
 ## Docker Build & Run
 
