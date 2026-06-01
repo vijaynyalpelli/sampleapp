@@ -1,4 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 // Add OpenAPI documentation (Swagger/API explorer)
 builder.Services.AddOpenApi();
