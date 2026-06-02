@@ -32,7 +32,7 @@ app.MapGet("/weatherforecast", () =>
 });
 
 app.Run();
-Introducing error for failing the build
+
 public partial class Program { }
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
