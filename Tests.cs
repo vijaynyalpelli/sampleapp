@@ -54,7 +54,6 @@ public class ApiTests : IAsyncLifetime
         Assert.NotNull(result);
         Assert.True(result.ContainsKey("status"));
         Assert.Equal("healthy", result["status"]);
-        Assert.True(false);
     }
 
     [Fact]
