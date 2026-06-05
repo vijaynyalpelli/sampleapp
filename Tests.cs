@@ -29,6 +29,8 @@ public class ApiTests : IAsyncLifetime
         }
     }
 
+
+    // Unit test to ensure App is running
     [Fact]
     public async Task RootEndpoint_ReturnsSuccessMessage()
     {
@@ -41,6 +43,7 @@ public class ApiTests : IAsyncLifetime
         Assert.Equal("App is running successfully!", content);
     }
 
+    // Unit test to ensure /health endpoint is running
     [Fact]
     public async Task HealthEndpoint_ReturnsHealthyStatus()
     {
@@ -56,6 +59,7 @@ public class ApiTests : IAsyncLifetime
         Assert.Equal("healthy", result["status"]);
     }
 
+    // Unit test to ensure weatherforcast is giving results
     [Fact]
     public async Task WeatherForecastEndpoint_ReturnsFiveDaysOfForecasts()
     {
