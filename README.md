@@ -179,10 +179,10 @@ dotnet test tests/MySampleApp.Tests/WeatherForecastTests.cs
 
 ### Endpoints
 
-- **GET `/`** — Health check (returns `"App is running successfully!"`)
-- **GET `/health`** — Liveness probe (returns `{ "status": "healthy" }`)
-- **GET `/weatherforecast`** — 5-day forecast with random temperatures
-- **GET `/openapi/v1.json`** — OpenAPI/Swagger schema (development only)
+- **GET `/`** ï¿½ Health check (returns `"App is running successfully!"`)
+- **GET `/health`** ï¿½ Liveness probe (returns `{ "status": "healthy" }`)
+- **GET `/weatherforecast`** ï¿½ 5-day forecast with random temperatures
+- **GET `/openapi/v1.json`** ï¿½ OpenAPI/Swagger schema (development only)
 
 ## Docker Build & Run
 
@@ -194,13 +194,91 @@ docker build -t mysampleapp:latest .
 docker run -p 5000:8080 mysampleapp:latest
 ```
 
+## Push Docker Image to GitHub Container Registry (GHCR)
+
+### Prerequisites
+- GitHub account with repository access
+- Personal Access Token (PAT) with `write:packages` and `read:packages` scopes
+  - Create at: https://github.com/settings/tokens
+
+### Steps
+
+#### 1. Create Personal Access Token (PAT)
+
+1. Go to GitHub â†’ Settings â†’ Developer settings â†’ Personal access tokens â†’ Tokens (classic)
+2. Click **"Generate new token (classic)"**
+3. Select scopes:
+   - âœ… `write:packages`
+   - âœ… `read:packages`
+4. Click **"Generate token"** and copy the token
+
+#### 2. Login to GHCR
+
+```bash
+# Using --password-stdin (recommended)
+echo "YOUR_PAT" | docker login ghcr.io -u YOUR_GITHUB_USERNAME --password-stdin
+
+# Example:
+# echo "ghp_xxxxxxxxxxxx" | docker login ghcr.io -u vijaynyalpelli --password-stdin
+```
+
+#### 3. Tag the Docker Image
+
+```bash
+# Format: ghcr.io/OWNER/IMAGE_NAME:TAG
+docker tag mysampleapp:latest ghcr.io/YOUR_GITHUB_USERNAME/mysampleapp:latest
+
+# Optional: Add version tag
+docker tag mysampleapp:latest ghcr.io/YOUR_GITHUB_USERNAME/mysampleapp:v1.0.0
+
+# Example:
+# docker tag mysampleapp:latest ghcr.io/vijaynyalpelli/mysampleapp:latest
+```
+
+#### 4. Push the Image to GHCR
+
+```bash
+docker push ghcr.io/YOUR_GITHUB_USERNAME/mysampleapp:latest
+
+# Optional: Push version tag
+docker push ghcr.io/YOUR_GITHUB_USERNAME/mysampleapp:v1.0.0
+
+# Example:
+# docker push ghcr.io/vijaynyalpelli/mysampleapp:latest
+```
+
+#### 5. Make Package Public (Optional)
+
+1. Go to GitHub â†’ Your profile â†’ Packages
+2. Click on `mysampleapp`
+3. Click **"Package settings"**
+4. Change visibility to **"Public"** if you want the image publicly accessible
+
+#### 6. Pull the Image
+
+```bash
+# Pull from GHCR
+docker pull ghcr.io/YOUR_GITHUB_USERNAME/mysampleapp:latest
+
+# Example:
+# docker pull ghcr.io/vijaynyalpelli/mysampleapp:latest
+```
+
+### Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| **"context deadline exceeded"** | Check VPN/proxy settings; ensure Docker Desktop is running |
+| **"unauthorized: authentication required"** | Verify PAT has `write:packages` scope; use username (not email) |
+| **"denied: permission_denied"** | Ensure PAT has correct permissions; regenerate token if needed |
+
 ## Deployment to Azure
 
 ### Option 1: Using GitHub Actions CI/CD Pipeline
 
 1. Create an Azure App Service with .NET 10 runtime (Windows or Linux)
 2. Get the publish profile and store it in GitHub secrets as `AZURE_WEBAPP_PUBLISH_PROFILE`
-3. Push to `main` branch — the workflow automatically deploys
+3. Push to `main` branch ï¿½ the workflow automatically deploys
 
 ### Option 2: Using Azure CLI
 
@@ -296,7 +374,7 @@ dotnet test tests/MySampleApp.Tests -v minimal
 
 ## License
 
-MIT License — see LICENSE file for details
+MIT License ï¿½ see LICENSE file for details
 
 ## Support
 
