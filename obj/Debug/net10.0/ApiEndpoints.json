@@ -1,26 +1,8 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_2",
-    "RelativePath": "",
-    "HttpMethod": "GET",
-    "IsController": false,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
     "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
-    "RelativePath": "generate-error",
+    "RelativePath": "health",
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
@@ -32,11 +14,11 @@
         "StatusCode": 200
       }
     ],
-    "EndpointName": "GenerateError"
+    "EndpointName": "Health"
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0",
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_0",
     "RelativePath": "weatherforecast",
     "HttpMethod": "GET",
     "IsController": false,
@@ -44,8 +26,10 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "WeatherForecast[]",
+        "MediaTypes": [
+          "application/json"
+        ],
         "StatusCode": 200
       }
     ],
