@@ -1,5 +1,7 @@
 # MySampleApp
 
+![Docker Image](https://img.shields.io/badge/ghcr.io-vijaynyalpelli%2Fmysampleapp-blue)
+
 A minimal .NET 10 Weather API sample application demonstrating best practices for ASP.NET Core minimal APIs, error handling, and deployment to Azure App Service.
 
 ## Features
